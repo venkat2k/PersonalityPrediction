@@ -1,0 +1,11 @@
+[sframe]
+version=0
+num_segments=0
+num_columns=2
+nrows=607
+[column_names]
+0000=tfidf
+0001=type
+[column_files]
+0000=m_1274973cd5053cba.sidx:0
+0001=m_1274973cd5053cba.sidx:1
