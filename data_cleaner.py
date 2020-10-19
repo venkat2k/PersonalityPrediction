@@ -15,7 +15,7 @@ class TextCleaner:
         text = ' '.join(re.sub("(@[A-Za-z0-9]+)|([^0-9A-Za-z \t])|(\w+:\/\/\S+)", " ", text).split())
         text = re.sub(r'http\S+', '', text)
         chars = re.escape(string.punctuation)
-        text = re.sub(r'['+chars+']', '', text)
+        text = re.sub(r'['+chars+']', ' ', text)
         words = text.split()
         clean_text = ""
         for word in words:
