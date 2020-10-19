@@ -9,11 +9,11 @@ class TweetHandler:
         auth = tweepy.AppAuthHandler(credentials['api_key'], credentials['api_secret_key'])
         self.api = tweepy.API(auth)
 
-    def get_tweets(self, username, count):
+    def get_tweets(self, username, count, allow_retweets=False):
         status_objects = self.api.user_timeline(id=username, count=count)
         tweets = []
         for status in status_objects:
-            if not status.retweeted:
+            if not status.retweeted or allow_retweets:
                 tweets.append(status.text)
         return tweets
 
